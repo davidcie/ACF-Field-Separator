@@ -1,12 +1,12 @@
 <?php
 /*
 	Plugin Name: ACF Field Separator
-	Plugin URI: https://github.com/tybruffy/ACF-Field-Separator
+	Plugin URI: https://github.com/davidcie/ACF-Field-Separator
 	Description: Allows you to insert a heading in between fields.
 	Version: 1.0.0
-	Author: tybruffy
-	Author URI: https://github.com/tybruffy/
-	GitHub Plugin URI: https://github.com/tybruffy/ACF-Field-Separator
+	Author: Dawid Ciecierski
+	Author URI: https://github.com/davidcie/
+	GitHub Plugin URI: https://github.com/davidcie/ACF-Field-Separator
 	License: GPL
 */
 
