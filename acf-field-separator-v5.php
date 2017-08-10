@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 *  ACF Field Separator Class
 *
@@ -10,11 +12,7 @@
 *  @package		ACF
 *  @subpackage	Fields
 */
-
-if( ! class_exists('acf_field_separator') ) :
-
 class acf_field_separator extends acf_field {
-	
 	
 	/*
 	*  __construct
@@ -32,10 +30,8 @@ class acf_field_separator extends acf_field {
 	function __construct() {
 
 		$this->name = 'separator';
-		$this->label = __("Separator",'acf');
+		$this->label = __('Separator','acf-field-separator');
 		$this->category = 'layout';
-
-		add_filter("acf/get_field_types", array($this, 'get_field_types'), 10, 1);
 		
 		// do not delete!
     	parent::__construct();
@@ -59,7 +55,6 @@ class acf_field_separator extends acf_field {
 	}
 	
 	
-	
 	/*
 	*  render_field_settings()
 	*
@@ -81,7 +76,21 @@ class acf_field_separator extends acf_field {
 			'message'		=> 'Use "Field Separators" to better organize your edit screen by grouping fields together. The separator field just adds a lined heading between groups of fields, with the field Label as the text',
 		));	
 	}
-
+	
+	
+	/*
+	*  field_group_admin_head()
+	*
+	*  This action is called in the admin_head action on the edit screen where your field is edited.
+	*  Use this action to add CSS and JavaScript to assist your render_field_options() action.
+	*
+	*  @type	action (admin_head)
+	*  @since	3.6
+	*  @date	23/01/13
+	*
+	*  @param	n/a
+	*  @return	n/a
+	*/
 
 	function field_group_admin_head() {
 		?>
@@ -121,8 +130,23 @@ class acf_field_separator extends acf_field {
 			<?php
 	}
 	
+	
+	/*
+	*  input_admin_head()
+	*
+	*  This action is called in the admin_head action on the edit screen where your field is created.
+	*  Use this action to add CSS and JavaScript to assist your render_field() action.
+	*
+	*  @type	action (admin_head)
+	*  @since	3.6
+	*  @date	23/01/13
+	*
+	*  @param	n/a
+	*  @return	n/a
+	*/
+	
 	function input_admin_head() {
-		wp_enqueue_style( "acf-separator-css", plugin_dir_url( __FILE__ ) . 'css/input.css');	
+		wp_enqueue_style( 'acf-separator-css', plugin_dir_url( __FILE__ ) . 'css/input.css');	
 	}
 
 }
